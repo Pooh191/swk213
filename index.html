@@ -55,6 +55,31 @@
         <p><b>Copyright © 2024 - <span id="currentYear"></span> มัธยมศึกษาปีที่ 2/13. สงวนลิขสิทธิ์.</b></p>
     </footer>
 
+    <div id="popup" class="popup">
+        <div class="popup-overlay" onclick="closePopup()"></div> <!-- พื้นที่คลิกเพื่อปิด -->
+        <div class="popup-content">
+            <h2>📌 ปิดใช้งานเว็บไซต์</h2>
+            <p>เว็บไซต์ใหม่ของเรา : <a href="https://swk13.site" target="_blank">https://swk13.site</a></p>
+            <p>ทุกอย่างจะเก็บไว้เป็นความทรงจำ 2/13</p>
+            <button onclick="closePopup()">ปิด</button>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (!localStorage.getItem("popupClosed")) {
+                document.getElementById("popup").style.display = "flex";
+            }
+        });
+    
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            localStorage.setItem("popupClosed", "true"); // บันทึกว่าผู้ใช้ปิดแล้ว
+        }
+    </script>
+    
+    
+
     <script src="scripts.js"></script>
 </body>
 </html>
